@@ -1,0 +1,81 @@
+/*
+ * commual.h
+ *
+ *  Created on: Jul 8, 2013
+ *      Author: House_Lee
+ */
+
+#ifndef INCLUDES_COMMUAL_H_
+#define INCLUDES_COMMUAL_H_
+
+#define IP_ADDR_LEN 16
+#define MAX_NET_ERR_LEN 256
+
+#ifdef	__cplusplus
+extern "C" {
+#endif
+
+#ifndef true
+#define true (1)
+#endif /* ! true */
+
+#ifndef false
+#define false (0)
+#endif /* ! false */
+
+//disable the not-used warning during the compilation
+#ifndef AVOID_NOUSED
+#define AVOID_NOUSED(V) ((void) V)
+#endif
+
+typedef int bool;
+
+#ifndef NULL
+#define NULL ((void*)0)
+#endif /* ! NULL */
+
+#ifndef MAGIC_CODE
+#define MAGIC_CODE 0x301088
+#endif
+
+enum COMMUAL_ERROR_CODE {
+	ERR_NETWORK_TRY_AGAIN = -3,
+	ERR_NETWORK_ACCEPT_ALLDONE = -2,
+	ERR_NETWORK_EXCEPTION = -1,
+
+	ERR_QUEUE_EMPTY = 100,
+	ERR_QUEUE_BUFFER_NULL,
+
+	ERR_EXECUTOR_CONFIG_INCORRECT = 200,
+	ERR_EXECUTOR_CONFIG_FILENAME_NULL,
+	ERR_EXECUTOR_CONFIG_FILE_NOT_EXIST,
+	ERR_EXECUTOR_CONFIG_UNRECOGNIZED,
+	ERR_EXECUTOR_CONFIG_SET_UNSUPPORTED,
+
+	ERR_MAP_SET_EXCEPTION = 300,
+	ERR_MAP_KEY_NOTFOUND,
+
+	ERR_TASK_MONITOR_INIT_FAIL = 400,
+	ERR_TASK_ALREADY_RUNNING,
+	ERR_TASK_PARAM,
+	ERR_TASK_NOT_CREATED,
+	ERR_TASK_CREATE_PIPE_FAIL,
+	ERR_TASK_FORK_PROCESS_FAIL,
+	ERR_TASK_RESULT_PARAM,
+	ERR_TASK_RESULT_NOT_FOUND,
+	ERR_TASK_RESULT_FORMAT_ERR,
+
+	ERR_STORAGE_INIT_FAIL = 500,
+	ERR_STORAGE_SET_FAIL,
+	ERR_STORAGE_APPEND_FAIL,
+	ERR_STORAGE_GETBINARY_FAIL,
+	ERR_STORAGE_WRONG_PARAM,
+
+	MSG_ERR_TASK_NOT_FOUND = 600,
+};
+
+#ifdef	__cplusplus
+}
+#endif
+
+#endif /* INCLUDES_COMMUAL_H_ */
